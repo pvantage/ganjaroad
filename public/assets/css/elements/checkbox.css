@@ -1,0 +1,23 @@
+.checkbox-group .btn span.glyphicon {
+	display: none;
+}
+.checkbox-group .btn-group .btn{
+	background-color: #c9302c;
+    border-color: #ac2925;
+    color: #fff;
+}
+.checkbox-group .btn-group .btn.active{
+	background-color: #449d44;
+    border-color: #398439;
+    color: #fff;
+}
+.checkbox-group .btn span.glyphicon.glyphicon-remove {
+	display: block;
+}
+
+.checkbox-group .btn.active span.glyphicon.glyphicon-ok {
+	display: block;
+}
+.checkbox-group .btn.active span.glyphicon.glyphicon-remove {
+	display: none;
+}

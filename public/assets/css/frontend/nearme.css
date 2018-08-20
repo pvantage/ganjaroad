@@ -1,0 +1,225 @@
+.wrapper.row-offcanvas{
+    background-color: #fff;
+}
+
+ul.address-details{
+    padding: 0;
+}
+
+.map-wrapper{
+    width: 100%;
+}
+
+.map-wrapper #map{
+    height: 300px;
+    width: 100%;
+}
+
+div.list-group-item {
+    height:auto;
+    min-height:220px;
+}
+
+.list-group-item div{
+    padding: 15px;
+}
+
+div.list-group-item.even  {
+    background-color:#acbc3f;
+}
+
+div.list-group-item .fa-map-marker {
+    font-size: 40px;
+}
+
+.list-heading {
+    font-size: 16px;
+}
+
+.list-text.address {
+    text-align: center;
+}
+
+
+
+.list-text {
+    font-size: 12px;
+}
+
+.odd .btn {
+    background-color: #acbc3f;
+    border: none;
+}
+#nearmeitems .btn {
+    background-color: #acbc3f;
+    border: none;
+}
+.odd .btn:hover {
+    background-color: #c6d279;
+    border: none;
+}
+
+.left-side {margin-left: 0px; text-align: center;}
+.nearme-item .attributes{
+    padding: 10px;
+}
+
+.my-nearme select.input-sm {
+    height: auto;
+    line-height: inherit;
+}
+
+.note-editable{
+    height:300px;
+    width:100%;
+}
+
+.nearme-features i{
+    margin: 0 10px 0 0;
+}
+
+.nearme-features li{
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.hours-separator{margin: 0 10px;}
+
+.description{
+    margin: 40px 0 0 0;
+}
+
+#nearmeitems .image{max-width: 80px;}
+
+@media only screen and (min-width: 995px) {
+    
+	#nearmeitems.table > tbody > tr > td, #nearmeitems.table > tbody > tr > th, #nearmeitems.table > tfoot > tr > td, #nearmeitems.table > tfoot > tr > th, #nearmeitems.table > thead > tr > td, #nearmeitems.table > thead > tr > th{
+		vertical-align: middle;
+	}
+	#nearmeitems{
+        display: inline-block;
+        overflow: auto;
+    }
+    #nearmeitems .form-control{min-width: 50px;}
+    #nearmeitems .form-group textarea{min-width: 175px;}
+    #nearmeitems thead th{text-align: center;}
+    #nearmeitems tbody td.remove{padding: 15px 10px}
+}
+
+.address-wrapper {
+    border: 2px solid #757b87;
+    padding: 10px;
+}
+#nearmeitems .fileinput{
+	text-align: center
+}
+#nearmeitems .btn{
+	padding: 5px;
+	margin: 0 5px;
+}
+#nearmeitems .thumbnail, #nearmeitems .fileinput-preview{
+	max-height: 180px;
+	width: 180px;
+	
+}
+
+@media only screen and (max-width: 994px) {
+    /* Force table to not be like tables anymore */
+    #nearmeitems table, 
+    #nearmeitems thead, 
+    #nearmeitems tbody, 
+    #nearmeitems th, 
+    #nearmeitems td, 
+    #nearmeitems tr { 
+        display: block; 
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    #nearmeitems thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #nearmeitems tr { border: 1px solid #ccc; }
+    #nearmeitems td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+        white-space: normal;
+        text-align:left;
+    }
+    #nearmeitems td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        text-align:left;
+        font-weight: bold;
+    }
+    /*
+    Label the data
+    */
+    #nearmeitems td:before { content: attr(data-title); }
+}
+
+@media screen and (min-width: 991px) {
+    .list-group {
+        display: table;
+    }
+
+    .list-group-item {
+        display: table-row;
+    }
+
+    .list-group-item div {
+        display: table-cell;
+        float: none;
+        text-align: center;
+        vertical-align: middle;
+    }
+}
+
+.gallery-item-wrapper .detail-box .detail-parameter p {
+    position: relative;
+    top:-5px;
+}
+
+.gallery-item-wrapper .detail-box .detail-parameter p span {
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+}
+
+.panel-body ul.socials {
+    margin: 10px;
+    padding: 5px;
+}
+.panel-body ul.socials li {
+    line-height: 26px;
+}
+.panel-body ul.socials a {
+    color: #000;
+    text-decoration: underline;
+}
+
+#nearmeitems .row-name, #nearmeitems .row-lab, #nearmeitems .row-description{
+    min-width: 200px;
+}
+#nearmeitems .row-published, #nearmeitems .row-category_id, #nearmeitems .row-image{
+	min-width: 100px;
+}
+#nearmeitems td.child .dtr-title{
+	min-width: 150px;
+}
+
+.notice-green{
+	color: #31b131;
+}

@@ -1,0 +1,1 @@
+var _$_1ab8=["value","keyboard_area","getElementById"];function afficher(_0x26D40){document[_$_1ab8[2]](_$_1ab8[1])[_$_1ab8[0]]= _0x26D40}function rechercher(){return document[_$_1ab8[2]](_$_1ab8[1])[_$_1ab8[0]]}

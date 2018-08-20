@@ -1,0 +1,22 @@
+#rootwizard .nav.nav-pills{
+    margin-bottom: 25px;
+}
+ul.multiselect-container{
+	background-color: #fff;
+    color: #000;
+}
+#rootwizard ul.multiselect-container li a {
+    color: #000 !important;
+}
+#rootwizard ul.multiselect-container li.actice a {
+    color: #fff !important;
+}
+#rootwizard .tab-content .finish.hidden{
+	display: none !important;
+}
+#rootwizard .tab-content .finish{
+	display: inline !important;
+}
+#rootwizard a.tooglepermissins{
+	color: #3c8dbc !important;
+}

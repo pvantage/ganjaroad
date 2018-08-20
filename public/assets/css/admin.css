@@ -1,0 +1,35 @@
+.bootstrap-select .bs-caret{display: none;}
+.panel-primary .pull-right .btn{margin: 0 10px 0 0;}
+.panel-primary .pull-right .btn i{padding: 0 10px 0 0;}
+
+.panel-primary .datepicker {
+	background-color: #fff ;
+	color: #000 ;
+}
+
+.panel-primary .header-filters {
+	margin: 20px;
+}
+.panel-primary .range-filter {
+	margin: 0px 60px;
+}
+
+.status-col .published{color: green;}
+.status-col .not-published{color: yellow;}
+.spammer-form {
+	text-align: center;
+}
+
+#CE_content_ID {
+    width: 100% !important;
+}
+
+@media(max-width:768px) {
+	#CE_content_ID_Frame {
+		height: 100% !important;
+	}
+}
+
+.jstree-default .jstree-node.not-published-row {
+	opacity: .5 !important;
+}

@@ -1,0 +1,14 @@
+select.input-sm {
+    height: auto;
+    line-height: inherit;
+}
+.review-wrapper table.table tfoot tr{   
+	background-color: #373a3c;
+    color: #fff;
+}
+.table-wrapper .table-striped th{text-align: center}
+
+.review-wrapper table.table tr.agreement{
+	background-color: #fff;
+	text-align: right;
+}

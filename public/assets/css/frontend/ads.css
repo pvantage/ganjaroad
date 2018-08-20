@@ -1,0 +1,9 @@
+.my-ads select.input-sm {
+    height: auto;
+    line-height: inherit;
+}
+
+.form-group .fileupload-preview{
+	display: inline-block;
+	margin: 20px 0;
+}

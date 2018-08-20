@@ -1,0 +1,23 @@
+.multicity label {font-weight: 700;}
+
+input.tier-price{
+    min-width: 150px;
+}
+
+.tier-prices label {
+    width: 100%;
+    text-align: left !important;
+}
+
+.tier-prices .actions {
+    display: inline-block;
+    margin: 15px 0 0 15px;
+}
+
+.tier-prices .align-right{
+    text-align: right;
+}
+
+.city-dropdown {
+    margin: 10px 0;
+}

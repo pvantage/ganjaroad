@@ -1,0 +1,339 @@
+/*http https dropdown*/
+	.dropup, .dropdown {
+    position: relative;
+}
+.dropdown-toggle:after {
+    border-left: 0.3em solid transparent;
+    border-right: 0.3em solid transparent;
+    border-top: 0.3em solid;
+    content: "";
+    display: inline-block;
+    height: 0;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    vertical-align: middle;
+    width: 0;
+}
+.dropdown-toggle:focus {
+    outline: 0 none;
+}
+.dropup .dropdown-toggle:after {
+    border-bottom: 0.3em solid;
+    border-top: 0 none;
+}
+.dropdown-menu {
+    background-clip: padding-box;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    color: #373a3c;
+    display: none;
+    float: left;
+    font-size: 1rem;
+    left: 0;
+    list-style: outside none none;
+    margin: 2px 0 0;
+    min-width: 160px;
+    padding: 5px 0;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    z-index: 1000;
+}
+.dropdown-divider {
+    background-color: #e5e5e5;
+    height: 1px;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+.dropdown-item {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    clear: both;
+    color: #373a3c;
+    display: block;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 3px 20px;
+    text-align: inherit;
+    white-space: nowrap;
+    width: 100%;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+    background-color: whitesmoke;
+    color: #2b2d2f;
+    text-decoration: none;
+}
+.dropdown-item.active, .dropdown-item.active:focus, .dropdown-item.active:hover {
+    background-color: #0275d8;
+    color: white;
+    outline: 0 none;
+    text-decoration: none;
+}
+.dropdown-item.disabled, .dropdown-item.disabled:focus, .dropdown-item.disabled:hover {
+    color: #818a91;
+}
+.dropdown-item.disabled:focus, .dropdown-item.disabled:hover {
+    background-color: transparent;
+    background-image: none;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+.open > .dropdown-menu {
+    display: block;
+}
+.open > a {
+    outline: 0 none;
+}
+.dropdown-menu-right {
+    left: auto;
+    right: 0;
+}
+.dropdown-menu-left {
+    left: 0;
+    right: auto;
+}
+.dropdown-header {
+    color: #818a91;
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    padding: 3px 20px;
+    white-space: nowrap;
+}
+.dropdown-backdrop {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 990;
+}
+.pull-right > .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+.dropup .caret, .navbar-fixed-bottom .dropdown .caret {
+    border-bottom: 0.3em solid;
+    border-top: 0 none;
+    content: "";
+}
+.dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {
+    bottom: 100%;
+    margin-bottom: 2px;
+    top: auto;
+}
+.dropdown-item {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    clear: both;
+    color: #373a3c;
+    display: block;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 3px 20px;
+    text-align: inherit;
+    white-space: nowrap;
+    width: 100%;
+	font-size: 1.5em;
+}
+/*Blog  custom code*/
+
+.featured-post-wide {
+    position: relative;
+    margin: 0 0 30px;
+    overflow: hidden;
+}
+
+.the-box {
+    padding: 15px;
+    margin-bottom: 30px;
+    border: 1px solid #D5DAE0;
+    position: relative;
+    background: white;
+}
+
+.featured-post-wide .featured-text {
+    position: relative;
+    background: #fff;
+    padding: 15px 15px 15px 40px;
+    z-index: 3;
+}
+
+.additional-post {
+    padding: 10px 15px 10px 0;
+}
+
+.box {
+    width: 270px;
+}
+
+.article {
+    padding: 8px;
+    line-height: 1;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.article h4 {
+    margin: 14px 0 4px 0;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 17px;
+}
+
+.hide-text {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.input-block-level {
+    display: block;
+    width: 100%;
+    min-height: 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.btn-file {
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+}
+
+.btn-file > input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate(-300px, 0) scale(4);
+    font-size: 23px;
+    direction: ltr;
+    cursor: pointer;
+}
+
+.fileupload {
+    margin-bottom: 9px;
+}
+
+.fileupload .uneditable-input {
+    display: inline-block;
+    margin-bottom: 0px;
+    vertical-align: middle;
+    cursor: text;
+}
+
+.fileupload .thumbnail {
+    overflow: hidden;
+    display: inline-block;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.fileupload .thumbnail > img {
+    display: inline-block;
+    vertical-align: middle;
+    max-height: 100%;
+}
+
+.fileupload .btn {
+    vertical-align: middle;
+}
+
+.fileupload-exists .fileupload-new, .fileupload-new .fileupload-exists {
+    display: none;
+}
+
+.fileupload-inline .fileupload-controls {
+    display: inline;
+}
+
+.fileupload-new .input-append .btn-file {
+    -webkit-border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.thumbnail-borderless .thumbnail {
+    border: none;
+    padding: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.fileupload-new.thumbnail-borderless .thumbnail {
+    border: 1px solid #ddd;
+}
+
+.padding_20px {
+    padding: 20px;
+}
+
+.padding_20px .hr {
+    border-top: 1px solid #ccc;
+    clear: both;
+    padding-top: 10px;
+}
+
+.padding_bottom_none {
+    padding-bottom: 0px;
+}
+
+.bootstrap-select .btn {
+    width: 140%;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+.bootstrap-select.btn-group .dropdown-menu {
+    min-width: 100%;
+}
+
+.bootstrap-select.btn-group .btn .caret {
+    position: absolute;
+    right: 5px;
+    top: 15px;
+    color: #555;
+}
+
+.padding_20px .livicon {
+    padding-right: 15px !important;
+}
+
+.padding_20px p {
+    font-size: 12px;
+}
+
+.nopadleftright {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+/*add new blog */
+/*summer note */
+.note-editable{
+    height:300px;
+    width:100%;
+}

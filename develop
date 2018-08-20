@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+VAGRANT="vagrant"
+VAGRANT_COMMAND="vagrant ssh -c "
+
+function die () {
+    echo >&2 "$@"
+    exit 1
+}
+
+if [ $# -gt 0 ];then
+
+  if [ "$1" == "artisan" ]; then
+    shift 1
+    ARGS="$@"
+    ${VAGRANT_COMMAND} "cd /home/vagrant/code && php artisan $ARGS"
+
+  elif [ "$1" == "composer" ]; then
+    shift 1
+    ARGS="$@"
+    ${VAGRANT_COMMAND} "cd /home/vagrant/code && composer $ARGS"
+
+  elif [ "$1" == "npm" ]; then
+    shift 1
+    ARGS="$@"
+    ${VAGRANT_COMMAND} "cd /home/vagrant/code && npm -s $ARGS"
+
+  elif [ "$1" == "test" ]; then
+    shift 1
+    ARGS="$@"
+    ${VAGRANT_COMMAND} "cd /home/vagrant/code && php vendor/bin/codecept run $ARGS"
+
+  elif [ "$1" == "test-frontend" ]; then
+    shift 1
+    ARGS="$@"
+    ${VAGRANT_COMMAND} "cd /home/vagrant/code && npm -s start $ARGS"
+
+  elif [ "$1" == "db-dump" ]; then
+    shift 1
+    ${VAGRANT_COMMAND} "cd /home/vagrant/code && mysqldump -u root -psecret homestead > database/dump.sql"
+
+  elif [ "$1" == "db-restore" ]; then
+    shift 1
+    ${VAGRANT_COMMAND} "cd /home/vagrant/code && mysql -u root -p homestead --password=secret < database/dump.sql"
+
+  elif [ "$1" == "db-dump-tests" ]; then
+    shift 1
+    ${VAGRANT_COMMAND} "cd /home/vagrant/code && mysqldump -u root -psecret homestead > tests/db/dump.sql"
+
+  else
+      ${VAGRANT} "$@"
+  fi
+else
+  ${VAGRANT} help
+fi

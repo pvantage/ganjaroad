@@ -1,0 +1,15 @@
+.section-new-topic .news-wrapper {
+    box-sizing: border-box;
+    display: inline-block;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+.section-new-topic .news-wrapper .news-slider {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}

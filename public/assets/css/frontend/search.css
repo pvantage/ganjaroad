@@ -1,0 +1,12 @@
+.search-results .caption b{font-size: 60px}
+
+.tree .branch .open-link, .tree .branch .open-link a{
+	display: inline-block !important;
+}
+.tree .branch .open-link a{text-decoration: underline;}
+.tree .branch .open-link {margin: 0 10px;}
+
+.other-list{
+	margin: 0;
+    padding: 0 20px;
+}

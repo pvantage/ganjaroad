@@ -1,0 +1,680 @@
+/* Visit http://www.menucool.com/responsive-slider for instructions */
+html{
+    overflow: visible!important;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+#ninja-slider {
+    width: 100%;
+    height: 100%;
+    background: rgba(25, 25, 25, 0.56);
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#ninja-slider .fs-icon {
+    top: -15px;
+    right: -15px;
+    width: 38px;
+    height: 38px;
+    background: #acbc3f;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    font: normal 18px/36px arial;
+    border-radius: 50%;
+    opacity: 1;
+    -webkit-transition: opacity 0.8s;
+    transition: opacity 0.8s;
+}
+
+#ninja-slider .slider-inner:hover .fs-icon,
+#ninja-slider.fullscreen .fs-icon {
+    opacity: 1;
+}
+
+#ninja-slider .fs-icon::before {
+    content: "x";
+    display: block;
+}
+
+#ninja-slider.fullscreen .fs-icon::before {
+    content: "+";
+    display: block;
+    font-weight: bold;
+    font-size: 3em;
+    transform: rotate(-45deg);
+}
+
+#ninja-slider .slider-inner {
+    max-width: 600px;
+    max-height: 432px;
+    margin: 0 auto;
+    /*center-aligned */
+    font-size: 0px;
+    position: relative;
+    box-sizing: border-box;
+    top: 45%;
+    margin-top: -215px;
+}
+
+#ninja-slider.fullscreen .slider-inner {
+    width: 98%;
+    /* 100% will cause a big top gap issue in iPhone*/
+    max-width: 700px;
+}
+
+#ninja-slider ul {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: visible !important;
+    /*For showing captions outside the slider when transitionType is "fade". */
+}
+
+#ninja-slider li {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    font-size: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    /*overflow:hidden;*/
+    /*Comment it out to show the caption*/
+    box-sizing: border-box;
+}
+
+#ninja-slider li.ns-show {
+    opacity: 1;
+}
+
+/* --------- slider image ------- */
+
+#ninja-slider .ns-img {
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: contain;
+    /*Note: If transitionType is zoom, it will be overridden to cover.*/
+    /*decorate border*/
+    box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    cursor: default;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/*---------- Captions -------------------*/
+
+#ninja-slider .caption {
+    position: absolute;
+    top: auto;
+    bottom: -80px;
+    z-index: 0;
+    margin: auto;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background: white;
+}
+
+/* ---------Arrow buttons ------- */
+/* The arrow button id should be: slider id + ("-prev", "-next", and "-pause-play") */
+
+#ninja-slider-pause-play {
+    display: none;
+}
+
+#ninja-slider-prev {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+#ninja-slider-next {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+#ninja-slider-prev,
+#ninja-slider-next {
+    position: absolute;
+    display: inline-block;
+    width: 42px;
+    height: 50px;
+    line-height: 50px;
+    top: 50%;
+    /* not 50% as caption at bottom should be counted.*/
+    background-color: #acbc3f;
+    background-color: #ccc\9;
+    /*IE8 hack*/
+    backface-visibility: hidden;
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: 10;
+    opacity: 1;
+    font-family: sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    -webkit-transition: all 0.7s;
+    transition: all 0.4s;
+}
+
+.slider-inner:hover #ninja-slider-prev,
+.slider-inner:hover #ninja-slider-next {
+    opacity: 1;
+}
+
+#ninja-slider-prev {
+    left: -42px;
+    /*set it with a positive value if .slider-inner does not have max-width setting.*/
+}
+
+#ninja-slider-next {
+    right: -42px;
+}
+
+/* arrows */
+
+#ninja-slider-prev:before,
+#ninja-slider-next:before {
+    position: absolute;
+    top: 16px;
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-left: 4px solid white;
+    border-top: 4px solid white;
+    backface-visibility: hidden;
+}
+
+#ninja-slider-prev::before {
+    -ms-transform: rotate(-45deg);
+    /*IE 9*/
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    left: 16px;
+}
+
+#ninja-slider-next:before {
+    -ms-transform: rotate(135deg);
+    /*IE 9*/
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    right: 16px;
+}
+
+/*pagination num within the arrow buttons*/
+
+#ninja-slider-prev:hover,
+#ninja-slider-next:hover {
+    width: 80px;
+}
+
+#ninja-slider-prev div {
+    margin-right: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    float: right;
+}
+
+#ninja-slider-next div {
+    margin-left: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    float: left;
+}
+
+#ninja-slider-prev:hover div,
+#ninja-slider-next:hover div {
+    opacity: 1;
+}
+
+/*------ pager(nav bullets) ------*/
+/* The pager id should be: slider id + "-pager" */
+
+#ninja-slider-pager {
+    display: none;
+}
+
+#ninja-slider-prev,
+#ninja-slider-next,
+#ninja-slider-pause-play {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/*Responsive settings*/
+
+@media only screen and (max-width: 600px) {
+    #ninja-slider-prev,
+    #ninja-slider-next,
+    #ninja-slider-pager {
+        display: none;
+    }
+    #ninja-slider li .cap1 {
+        font-size: 20px;
+    }
+}
+
+.gallery-item-wrapper {
+    display: table;
+    width: 100%;
+    height: 72px;
+    margin-bottom: 7px;
+    border: 1px solid rgb(216, 216, 216);
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.gallery-item-wrapper:hover {
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item-wrapper .img-box,
+.gallery-item-wrapper .detail-box,
+.gallery-item-wrapper .two-detail-box {
+    display: table-cell;
+    vertical-align: middle;
+    border-right: 1px solid rgb(216, 216, 216);
+}
+
+.gallery-item-wrapper .img-box {
+    float: left;
+    height: 80px;
+    overflow: hidden;
+    text-align: center;
+    width: 100px;
+}
+
+.gallery-item-wrapper .img-box img {
+    height: 100%;
+    width: auto;
+}
+
+.gallery-item-wrapper .detail-box {
+    width: 85%;
+    padding-left: 5px;
+}
+
+.gallery-item-wrapper .detail-box .box-title {
+    float: left;
+    width: auto;
+}
+
+.gallery-item-wrapper .detail-box h2 {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+
+.gallery-item-wrapper .detail-box .box-title p {
+    font-size: 12px;
+    color: #000;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+
+.gallery-item-wrapper .detail-box .detail-parameter {
+    float: right;
+    padding-right: 15px;
+}
+
+.gallery-item-wrapper .detail-box .detail-parameter p {
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 10px;
+    color: #000;
+}
+
+.gallery-item-wrapper .detail-box .detail-parameter p span {
+    display: block;
+    color: #000;
+    font-size: 12px;
+    border-bottom: 1px dashed rgb(0, 0, 0);
+	width: 20px;
+}
+
+.gallery-item-wrapper .two-detail-box {
+    width: 20%;
+    position: relative;
+}
+
+.gallery-item-wrapper .two-detail-box.custom-tip {
+    position: absolute;
+    min-width: 420px;
+    top: -70px;
+    right: 0;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid #d6d5d5;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.3);
+}
+
+.two-detail-box.custom-tip:after {
+    width: 0;
+    bottom: -10px;
+    right: 50px;
+    height: 0;
+    position: absolute;
+    content: '';
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 25px solid #fff;
+}
+
+.gallery-item-wrapper .two-detail-box .half {
+    display: block;
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 18px 0;
+    border-right: 1px solid rgb(216, 216, 216);
+}
+
+.gallery-item-wrapper .two-detail-box .half:last-child {
+    border-right: 0;
+}
+
+/*.gallery-item-wrapper .two-detail-box .left
+{
+    border-right: 1px solid rgb(216, 216, 216);
+}*/
+
+.gallery-item-wrapper .two-detail-box p {
+    margin: 0;
+    color: #000;
+    font-size: 12px;
+    max-width: 40px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.gallery-item-wrapper .two-detail-box .half p span,
+.gallery-item-wrapper .two-detail-box .half p span {
+    display: block;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+}
+
+.gallery-item-wrapper .two-detail-box .half p span strong,
+.gallery-item-wrapper .two-detail-box .half p span strong {
+    color: black;
+    font-size: 16px;
+}
+
+.light-container {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.slider-inner .caption .gallery-item-wrapper {
+    border: 0;
+}
+
+.slider-inner .caption .gallery-item-wrapper:hover {
+    box-shadow: none;
+}
+
+.slider-inner .caption .gallery-item-wrapper .detail-parameter p {
+    color: #000;
+}
+
+.slider-inner .caption .gallery-item-wrapper .detail-parameter p span {
+    border-bottom: 0;
+}
+
+.slider-inner .caption .gallery-item-wrapper .detail-parameter p span strong {
+    color: black;
+    font-size: 16px;
+}
+
+.gallery-item-wrapper .two-detail-box .half p.empty span strong,
+.gallery-item-wrapper .two-detail-box .half p.empty span strong {
+    color: #000;
+}
+
+.gallery-item-wrapper .detail-parameter {
+    display: inline-block;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+#ninja-slider .gallery-item-wrapper{
+	display: inline-block;
+	height: auto;
+	margin: 0;
+}
+#ninja-slider .slider-inner .detail-parameter{
+	width: 100%;
+	display: inline-block;
+}
+#ninja-slider .slider-inner .detail-parameter ul{
+	display: inline-block;
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+#ninja-slider .slider-inner .detail-parameter ul li{
+	display: inline-block;
+    height: auto;
+    line-height: 10px;
+    margin: 5px 8px;
+    opacity: unset;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: auto;
+	text-transform: uppercase;
+}
+#ninja-slider .slider-inner .detail-parameter ul li span{
+	display: inline-block;
+    margin: 5px 0;
+    text-align: center;
+    width: 100%;
+}
+#ninja-slider .slider-inner .detail-box{
+	float: none;
+    padding: 15px;
+    width: 100%;
+}
+@media screen and (min-width: 991px) {
+    .gallery-item-wrapper.open .detail-box .box-title {
+        width: 100%;
+    }
+    .gallery-item-wrapper.open .detail-parameter {
+        display: none;
+    }
+    .gallery-item-wrapper.open .detail-box {
+        width:40%;
+        -webkit-transition: all 500ms ease;
+        -moz-transition: all 500ms ease;
+        -ms-transition: all 500ms ease;
+        -o-transition: all 500ms ease;
+        transition: all 500ms ease;
+    }
+    .gallery-item-wrapper.open .two-detail-box {
+        width: 60%;
+    }
+    .gallery-item-wrapper .two-detail-box .half:nth-child(3),
+    .gallery-item-wrapper .two-detail-box .half:nth-child(4),
+    .gallery-item-wrapper .two-detail-box .half:nth-child(5),
+    .gallery-item-wrapper .two-detail-box .half:nth-child(6) {
+        display: none;
+    }
+    .gallery-item-wrapper.open .two-detail-box .half:nth-child(3),
+    .gallery-item-wrapper.open .two-detail-box .half:nth-child(4),
+    .gallery-item-wrapper.open .two-detail-box .half:nth-child(5),
+    .gallery-item-wrapper.open .two-detail-box .half:nth-child(6) {
+        display: inline-block;
+    }
+    .gallery-item-wrapper.open .two-detail-box .half {
+        width: 16%;
+    }
+}
+
+.gallery-item-wrapper .two-detail-box.custom-tip .half {
+    display: inline-block;
+    width: 16%;
+}
+
+.slider-inner .caption .gallery-item-wrapper .detail-parameter p.empty {
+    color: #000;
+}
+
+.slider-inner .caption .gallery-item-wrapper .detail-parameter p.empty strong {
+    color: #000;
+}
+
+.weed-select {
+    border: 0;
+    box-shadow: none;
+    max-width: 180px;
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.btn-show-prices {
+    font-size: 13px;
+    width: auto;
+    background: transparent;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid rgb(216, 216, 216);
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.btn-show-prices:hover {
+    color: white;
+    background: #acbc3f;
+}
+
+.gallery-item-wrapper .two-detail-box .half:last-child {
+    border-right: 0;
+}
+
+.gallery-item-wrapper.open .two-detail-box .half:nth-child(6) {
+    border-right: 0;
+}
+
+.caption .gallery-item-wrapper .detail-parameter {
+    display: inline-block;
+}
+
+.caption .gallery-item-wrapper .detail-parameter {
+    margin-top: 5px;
+}
+
+.box-title p.lab span{
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 10px 0 0;
+}
+
+@media screen and (max-width: 990px) {
+    #ninja-slider .fs-icon {
+        right: 0;
+    }
+    #ninja-slider-prev,
+    #ninja-slider-next,
+    #ninja-slider-pause-play#ninja-slider-prev,
+    #ninja-slider-next,
+    #ninja-slider-pause-play {
+        display: block;
+    }
+    #ninja-slider-next {
+        right: 0;
+        margin-top: -20px;
+    }
+    #ninja-slider-prev {
+        left: 0;
+        margin-top: -20px;
+    }
+    #ninja-slider-next {
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-top-right-radius: 0%;
+        border-bottom-right-radius: 0%;
+    }
+    #ninja-slider-prev {
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-top-left-radius: 0%;
+        border-bottom-left-radius: 0%;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .gallery-item-wrapper .two-detail-box.custom-tip {
+        display: none;
+    }
+    .btn.btn-show-prices {
+        display: none;
+    }
+    .gallery-item-wrapper .img-box,
+    .gallery-item-wrapper .detail-box,
+    .gallery-item-wrapper .two-detail-box {
+        display: block;
+        width: 100%;
+    }
+    .gallery-item-wrapper .two-detail-box .half {
+        display: inline-block;
+        width: 33%;
+        float: right;
+        text-align: center;
+        border: 0;
+        padding: 18px 0;
+        /* border-right: 1px solid rgb(216, 216, 216); */
+    }
+    .gallery-item-wrapper .detail-box .detail-parameter p {
+
+        margin: 0 4px;
+    }
+    .two-detail-box {
+        clear: both;
+    }
+    .gallery-item-wrapper .img-box{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}

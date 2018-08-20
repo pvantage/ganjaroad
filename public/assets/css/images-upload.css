@@ -1,0 +1,54 @@
+#actions {
+    margin: 2em 0;
+}
+div.table {
+    display: table;
+}
+div.table .file-row {
+    display: table-row;
+}
+div.table .file-row > div {
+    border-top: 1px solid #ddd;
+    display: table-cell;
+    padding: 8px;
+    vertical-align: top;
+}
+div.table .file-row:nth-child(2n+1) {
+    background: #f9f9f9 none repeat scroll 0 0;
+}
+#total-progress {
+    opacity: 0;
+    transition: opacity 0.3s linear 0s;
+}
+#previews .file-row.dz-success .progress {
+    opacity: 0;
+    transition: opacity 0.3s linear 0s;
+}
+#previews .file-row .delete {
+    display: none;
+}
+#previews .file-row.dz-success .start, #previews .file-row.dz-success .cancel {
+    display: none;
+}
+#previews .file-row.dz-success .delete {
+    display: block;
+}
+#previews .btn{
+	margin: 25px 10px;
+}
+#previews .name{
+	max-width: 200px;
+    overflow: hidden;
+}
+#previews .preview img{
+	max-width: 80px;
+}
+
+/* Hide the start and cancel buttons and show the delete button */
+#previews .file-row.dz-complete .start,
+#previews .file-row.dz-complete .cancel {
+  display: none;
+}
+#previews .file-row.dz-complete .delete {
+  display: block;
+}

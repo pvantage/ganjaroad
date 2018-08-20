@@ -1,0 +1,12 @@
+.permissions-table {
+	margin: 20px 0;
+	border-collapse: collapse;
+}
+
+.permissions-table td{
+	padding-top: .5em;
+    padding-bottom: .5em;
+}
+.permissions-table th{
+	min-width: 100px;
+}

@@ -1,0 +1,76 @@
+/*-----------------------------------*\
+  $RESET
+\*-----------------------------------*/
+
+.butt, .input {
+    padding: .75em;
+    margin: .375em;
+    background-color: transparent;
+    border-radius: 4px;
+}
+.butt:focus, .input:focus {
+    outline: none;
+}
+.butt {
+    border: 2px solid #A9B6BC!important;
+    line-height: 1.375;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    font-weight: 700;
+    color:  #A9B6BC!important;
+    cursor: pointer;
+    -webkit-animation: CAnimation 60s infinite linear;
+    animation: CAnimation 60s infinite linear;
+}
+.site__title {
+    color: #67C5Df!important;
+    background-image: -webkit-linear-gradient(92deg, #01BC8C, #F89A14)!important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: CAnimation 60s infinite linear;
+    font-size: 70px;
+    font-weight: 100;
+}
+.butt--primary {
+    background-color: #EF6F6C!important;
+    color: #fff!important;
+}
+.input {
+    border: 1px solid #333!important;
+    border-radius: 4px;
+}
+.input--dropdown {
+    background-image: url("images/ddown.png");
+    background-image: url("images/ddown.svg?3"), none;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1em;
+    background-position: right center;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes CAnimation {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}
+
+/* Standard syntax */
+@keyframes CAnimation {
+    from {
+        -webkit-filter: hue-rotate(0deg);
+    }
+
+    to {
+        -webkit-filter: hue-rotate(-360deg);
+    }
+}
+/*-----------------------------------*\
+  $TYPOGRAPHY
+\*-----------------------------------*/
+.left-side {
+    top: 0px;
+}
